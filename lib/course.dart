@@ -13,7 +13,7 @@ class course extends StatelessWidget{
       appBar: AppBar(
         backgroundColor: Colors.red.shade200,
         title: 
-          Text('Batch wise Course Details', style: TextStyle(fontSize: 16),),
+          const Text('Batch wise Course Details', style: TextStyle(fontSize: 16),),
       ),
     
     body: const body(),
@@ -30,7 +30,7 @@ class body extends StatelessWidget{
     return  SingleChildScrollView(
            child: Column(children: [
             ExpansionTile(
-              title: Text('Compiler Design', textAlign: TextAlign.center,),
+              title: const Text('Compiler Design', textAlign: TextAlign.center,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -39,12 +39,12 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                       Navigator.push( context,
-                        MaterialPageRoute(builder: (context) =>  PdfViewer()),
+                        MaterialPageRoute(builder: (context) =>  const PdfViewer()),
                       );
                 },
-                 child: Text('Course Outline'),
+                 child: const Text('Course Outline'),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -55,9 +55,9 @@ class body extends StatelessWidget{
                   onPressed: () {
                        
                 },
-                 child: Text('Course Teacher Info'),
+                 child: const Text('Course Teacher Info'),
                 ),
-                 SizedBox(
+                 const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -67,12 +67,12 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Class Routine'),
+                 child: const Text('Class Routine'),
                 )
               ]
             ),
             ExpansionTile(
-              title: Text('Microprocessor And Assembly Language', textAlign: TextAlign.center,),
+              title: const Text('Microprocessor And Assembly Language', textAlign: TextAlign.center,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -81,9 +81,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Outline'),
+                 child: const Text('Course Outline'),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -93,9 +93,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Teacher Info'),
+                 child: const Text('Course Teacher Info'),
                 ),
-                 SizedBox(
+                 const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -105,12 +105,12 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Class Routine'),
+                 child: const Text('Class Routine'),
                 )
               ]
             ),
             ExpansionTile(
-              title: Text('Microprocessor And Assembly Language Lab', textAlign: TextAlign.center,),
+              title: const Text('Microprocessor And Assembly Language Lab', textAlign: TextAlign.center,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -119,9 +119,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Outline'),
+                 child: const Text('Course Outline'),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -131,9 +131,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Teacher Info'),
+                 child: const Text('Course Teacher Info'),
                 ),
-                 SizedBox(
+                 const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -143,12 +143,12 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Class Routine'),
+                 child: const Text('Class Routine'),
                 )
               ]
             ),
             ExpansionTile(
-              title: Text('System Design Analysis', textAlign: TextAlign.center,),
+              title: const Text('System Design Analysis', textAlign: TextAlign.center,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -157,9 +157,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Outline'),
+                 child: const Text('Course Outline'),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -169,9 +169,9 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Course Teacher Info'),
+                 child: const Text('Course Teacher Info'),
                 ),
-                 SizedBox(
+                 const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -181,12 +181,12 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                 },
-                 child: Text('Class Routine'),
+                 child: const Text('Class Routine'),
                 )
               ]
             ),
             ExpansionTile(
-              title: Text('System Design Analysis Lab', textAlign: TextAlign.center,),
+              title: const Text('System Design Analysis Lab', textAlign: TextAlign.center,),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
@@ -196,9 +196,9 @@ class body extends StatelessWidget{
                   onPressed: () {
 
                 },
-                 child: Text('Course Outline'),
+                 child: const Text('Course Outline'),
                 ),
-                SizedBox(
+                const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -208,13 +208,13 @@ class body extends StatelessWidget{
                   ),
                   onPressed: () {
                       Navigator.push( context,
-                        MaterialPageRoute(builder: (context) =>  Aysha()),
+                        MaterialPageRoute(builder: (context) =>  const Aysha()),
                       );
 
                 },
-                 child: Text('Course Teacher Info'),
+                 child: const Text('Course Teacher Info'),
                 ),
-                 SizedBox(
+                 const SizedBox(
                     height: 10,
                 ),
                  ElevatedButton(
@@ -225,7 +225,7 @@ class body extends StatelessWidget{
                   onPressed: () {
                    
                 },
-                 child: Text('Class Routine'),
+                 child: const Text('Class Routine'),
                 )
               ]
             )

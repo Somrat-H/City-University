@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import './splash_screen.dart';
 
@@ -18,7 +17,7 @@ class CityUniversity extends StatelessWidget{
           colorSchemeSeed: Colors.blue,
           useMaterial3: true,
         ),
-        home:  SplashScreen(),
+        home:  const SplashScreen(),
       );
   }
 }

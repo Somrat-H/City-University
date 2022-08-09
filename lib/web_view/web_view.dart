@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 
-class Web_View extends StatelessWidget{
+class MyWebView extends StatelessWidget{
+  const MyWebView({super.key});
+
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.tealAccent.shade100,
-        title: Text('Orbound City University'),
+        title: const Text('Orbound City University'),
       ),
-      body: WebView(
+      body: const WebView(
         javascriptMode: JavascriptMode.unrestricted,
         initialUrl: 'https://cityuniversity.orbund.com/einstein-freshair/index.jsp',
         )

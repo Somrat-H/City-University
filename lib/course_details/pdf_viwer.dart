@@ -2,11 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class PdfViewer extends StatelessWidget{
+  const PdfViewer({super.key});
+
+  @override
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.pink.shade100,
       appBar: AppBar(
-        title: Center(
+        title: const Center(
           child: Text('Course Outilne',),
         ),
       ),

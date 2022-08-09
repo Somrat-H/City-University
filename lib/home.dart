@@ -130,12 +130,12 @@ class Home extends StatelessWidget {
                     ),
                   ),
                 ),
-                Flexible(
+                const Flexible(
                   child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
+                    padding: EdgeInsets.all(8.0),
+                    child: SizedBox(
                       height: 100,
-                      child: const Text('Md Safaet Hossain\nHOD, Computer Science & Engineering', 
+                      child: Text('Md Safaet Hossain\nHOD, Computer Science & Engineering', 
                       style: TextStyle(fontSize: 15),),
                     ),
                   ),
@@ -149,23 +149,23 @@ class Home extends StatelessWidget {
             color: Colors.pink.shade100,
            child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
+            children: const [
               Flexible(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: SizedBox(
                     height: 100,
-                    child: const Text(
+                    child: Text(
                         'City Campus\n13/A, Panthapath, Dhaka-1215\nCell: +8801819813111, +8801778149097\nTel: 44819070, 44819050\nadmin@cityuniversity.edu.bd'),
                   ),
                 ),
               ),
               Flexible(
                 child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Container(
+                  padding: EdgeInsets.all(8.0),
+                  child: SizedBox(
                     height: 100,
-                    child: const Text(
+                    child: Text(
                         'Permanent Campus\nkhagan, Birulia, Savar, Dhaka-1216,Bangladesh\nCell: +880 1854-640476+880 1862-213214'),
                   ),
                 ),

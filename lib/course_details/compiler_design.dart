@@ -18,10 +18,10 @@ class CompilerDesign extends StatelessWidget{
         body: Center(child: 
         MaterialButton(onPressed: () {
           Navigator.pushReplacement(context, 
-                MaterialPageRoute(builder: (context) => PdfViewer()),
+                MaterialPageRoute(builder: (context) => const PdfViewer()),
           );
         },
-        child: Text('Course Outline'),
+        child: const Text('Course Outline'),
         ),
         ),
     );

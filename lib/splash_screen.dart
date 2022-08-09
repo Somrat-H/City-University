@@ -4,18 +4,21 @@ import 'package:flutter/material.dart';
 
 
 class SplashScreen extends StatelessWidget{
+  const SplashScreen({super.key});
+
+  @override
   Widget build(BuildContext context){
     return AnimatedSplashScreen(splash: Column(
       children: [
         Image.asset('image/logo.png',
         alignment: Alignment.topCenter,
         ),
-        CircularProgressIndicator(
+        const CircularProgressIndicator(
         ),
       ],
     ),
     backgroundColor: Colors.green.shade100,
-     nextScreen: Home(),
+     nextScreen: const Home(),
      splashIconSize: 250,
      duration: 1000,
     

@@ -18,7 +18,7 @@ class drawer extends StatelessWidget {
             // child: Text('List of Batch and About us'),
         
           ExpansionTile(
-            trailing: Icon(
+            trailing: const Icon(
               Icons.group_sharp
             ),
             title: const Text(
@@ -39,10 +39,10 @@ class drawer extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const course()),
                       );
                     },
-                    child: Text('Batch 52'),
+                    child: const Text('Batch 52'),
 
                   ),
-                  SizedBox(height: 5,),
+                  const SizedBox(height: 5,),
                   ElevatedButton(
                    style: ElevatedButton.styleFrom(
               minimumSize: const Size(500, 50),
@@ -54,14 +54,14 @@ class drawer extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const course()),
                       );
                     },
-                    child: Text('Batch 53'),
+                    child: const Text('Batch 53'),
                   ),
                 ],
               )
             ],
           ),
            ExpansionTile(
-            trailing: Icon(
+            trailing: const Icon(
               Icons.class_
             ),
             title: const Text(
@@ -79,10 +79,10 @@ class drawer extends StatelessWidget {
                     onPressed: () {
                       Navigator.push(
                         context,
-                        MaterialPageRoute(builder: (context) =>  Web_View()),
+                        MaterialPageRoute(builder: (context) =>  const MyWebView()),
                       );
                     },
-                    child: Text('OrboundCityUniversity'),
+                    child: const Text('OrboundCityUniversity'),
                   ),
                 ],
               )
@@ -99,7 +99,7 @@ class drawer extends StatelessWidget {
                         MaterialPageRoute(builder: (context) => const Developer_info()),
                       );
            },
-           child: Text('Devloper Info'),
+           child: const Text('Devloper Info'),
            )
         ],
       ),
