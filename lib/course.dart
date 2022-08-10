@@ -2,239 +2,251 @@ import 'package:city_university/course_details/pdf_viwer.dart';
 import 'package:city_university/course_details/teacher_info.dart';
 import 'package:flutter/material.dart';
 
-
-// ignore: camel_case_types
-class course extends StatelessWidget{
-  const course({Key? key}) : super(key: key);
-
+class CourseScreen extends StatelessWidget {
+  const CourseScreen({super.key});
   @override
-  Widget build (BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.red.shade200,
-        title: 
-          const Text('Batch wise Course Details', style: TextStyle(fontSize: 16),),
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: const Text(
+          'Batch 52 Course Details',
+          style: TextStyle(fontSize: 16),
+        ),
       ),
-    
-    body: const body(),
+      body: const BodyView(),
     );
-}
+  }
 }
 
-// ignore: camel_case_types
-class body extends StatelessWidget{
-  const body({Key? key}) : super(key: key);
+class CourseScreen2 extends StatelessWidget {
+  const CourseScreen2({super.key});
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.blue,
+        centerTitle: true,
+        title: const Text(
+          'Batch 53 Course Details',
+          style: TextStyle(fontSize: 16),
+        ),
+      ),
+      body: const BodyView(),
+    );
+  }
+}
+
+class BodyView extends StatelessWidget {
+  const BodyView({Key? key}) : super(key: key);
 
   @override
-  Widget build ( BuildContext context){
-    return  SingleChildScrollView(
-           child: Column(children: [
-            ExpansionTile(
-              title: const Text('Compiler Design', textAlign: TextAlign.center,),
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          ExpansionTile(
+              title: const Text(
+                'Compiler Design',
+                textAlign: TextAlign.center,
+              ),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
                   onPressed: () {
-                      Navigator.push( context,
-                        MaterialPageRoute(builder: (context) =>  const PdfViewer()),
-                      );
-                },
-                 child: const Text('Course Outline'),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const PdfViewer()),
+                    );
+                  },
+                  child: const Text('Course Outline'),
                 ),
                 const SizedBox(
-                    height: 10,
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                       
-                },
-                 child: const Text('Course Teacher Info'),
+                  onPressed: () {},
+                  child: const Text('Course Teacher Info'),
                 ),
-                 const SizedBox(
-                    height: 10,
+                const SizedBox(
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Class Routine'),
+                  onPressed: () {},
+                  child: const Text('Class Routine'),
                 )
-              ]
-            ),
-            ExpansionTile(
-              title: const Text('Microprocessor And Assembly Language', textAlign: TextAlign.center,),
+              ]),
+          ExpansionTile(
+              title: const Text(
+                'Microprocessor And Assembly Language',
+                textAlign: TextAlign.center,
+              ),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Outline'),
+                  onPressed: () {},
+                  child: const Text('Course Outline'),
                 ),
                 const SizedBox(
-                    height: 10,
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Teacher Info'),
+                  onPressed: () {},
+                  child: const Text('Course Teacher Info'),
                 ),
-                 const SizedBox(
-                    height: 10,
+                const SizedBox(
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Class Routine'),
+                  onPressed: () {},
+                  child: const Text('Class Routine'),
                 )
-              ]
-            ),
-            ExpansionTile(
-              title: const Text('Microprocessor And Assembly Language Lab', textAlign: TextAlign.center,),
+              ]),
+          ExpansionTile(
+              title: const Text(
+                'Microprocessor And Assembly Language Lab',
+                textAlign: TextAlign.center,
+              ),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Outline'),
+                  onPressed: () {},
+                  child: const Text('Course Outline'),
                 ),
                 const SizedBox(
-                    height: 10,
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Teacher Info'),
+                  onPressed: () {},
+                  child: const Text('Course Teacher Info'),
                 ),
-                 const SizedBox(
-                    height: 10,
+                const SizedBox(
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Class Routine'),
+                  onPressed: () {},
+                  child: const Text('Class Routine'),
                 )
-              ]
-            ),
-            ExpansionTile(
-              title: const Text('System Design Analysis', textAlign: TextAlign.center,),
+              ]),
+          ExpansionTile(
+              title: const Text(
+                'System Design Analysis',
+                textAlign: TextAlign.center,
+              ),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Outline'),
+                  onPressed: () {},
+                  child: const Text('Course Outline'),
                 ),
                 const SizedBox(
-                    height: 10,
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Course Teacher Info'),
+                  onPressed: () {},
+                  child: const Text('Course Teacher Info'),
                 ),
-                 const SizedBox(
-                    height: 10,
+                const SizedBox(
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                },
-                 child: const Text('Class Routine'),
+                  onPressed: () {},
+                  child: const Text('Class Routine'),
                 )
-              ]
-            ),
-            ExpansionTile(
-              title: const Text('System Design Analysis Lab', textAlign: TextAlign.center,),
+              ]),
+          ExpansionTile(
+              title: const Text(
+                'System Design Analysis Lab',
+                textAlign: TextAlign.center,
+              ),
               children: [
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-
-                },
-                 child: const Text('Course Outline'),
+                  onPressed: () {},
+                  child: const Text('Course Outline'),
                 ),
                 const SizedBox(
-                    height: 10,
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
                   onPressed: () {
-                      Navigator.push( context,
-                        MaterialPageRoute(builder: (context) =>  const Aysha()),
-                      );
-
-                },
-                 child: const Text('Course Teacher Info'),
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => const Aysha()),
+                    );
+                  },
+                  child: const Text('Course Teacher Info'),
                 ),
-                 const SizedBox(
-                    height: 10,
+                const SizedBox(
+                  height: 10,
                 ),
-                 ElevatedButton(
+                ElevatedButton(
                   style: ElevatedButton.styleFrom(
-              minimumSize: const Size(500, 50),
-              maximumSize: const Size(500, 50),
+                    minimumSize: const Size(500, 50),
+                    maximumSize: const Size(500, 50),
                   ),
-                  onPressed: () {
-                   
-                },
-                 child: const Text('Class Routine'),
+                  onPressed: () {},
+                  child: const Text('Class Routine'),
                 )
-              ]
-            )
-          ],
-        ),
+              ])
+        ],
+      ),
     );
-
   }
-  }
+}
 
 
 

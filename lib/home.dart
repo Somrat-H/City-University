@@ -1,19 +1,112 @@
-
-
-import 'package:city_university/drawer.dart';
+import 'package:city_university/model/app_data.dart';
+import 'package:city_university/web_view/web_view.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_drawers/flutter_drawers.dart';
 import 'package:flutter_image_slideshow/flutter_image_slideshow.dart';
+import 'package:provider/provider.dart';
 
-class Home extends StatelessWidget {
-  const Home({Key? key}) : super(key: key);
+import 'course.dart';
+import 'developer_info.dart';
 
+class HomeApp extends StatelessWidget {
+  const HomeApp({Key? key}) : super(key: key);
+
+  void changeScreen(BuildContext context, Widget screen) {
+    context.read<AppData>().widget = screen;
+    BoxDrawer.of(context)?.close();
+  }
+
+  Widget screenType(BuildContext context) {
+    return context.read<AppData>().widget;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: BoxDrawer(
+        drawer: Drawer(
+          child: Builder(builder: (context) {
+            return ListView(
+              children: [
+                ListTile(
+                  selected: screenType(context) is HomeScreen,
+                  title: const Text('Home'),
+                  onTap: () {
+                    changeScreen(context, const HomeScreen());
+                  },
+                ),
+                ExpansionTile(
+                  trailing: const Icon(Icons.group_sharp),
+                  title: const Text('Batch'),
+                  childrenPadding: const EdgeInsets.only(left: 16),
+                  children: [
+                    ListTile(
+                      selected: screenType(context) is CourseScreen,
+                      title: const Text('Batch 52'),
+                      onTap: () {
+                        changeScreen(context, const CourseScreen());
+                      },
+                    ),
+                    ListTile(
+                      selected: screenType(context) is CourseScreen2,
+                      title: const Text('Batch 53'),
+                      onTap: () {
+                        changeScreen(context, const CourseScreen2());
+                      },
+                    ),
+                  ],
+                ),
+                ExpansionTile(
+                  trailing: const Icon(Icons.school),
+                  title: const Text('Result'),
+                  childrenPadding: const EdgeInsets.only(left: 16),
+                  children: [
+                    ListTile(
+                      selected: screenType(context) is MyWebView,
+                      title: const Text('OrboundCityUniversity'),
+                      onTap: () {
+                        changeScreen(context, const MyWebView());
+                      },
+                    ),
+                  ],
+                ),
+                const AboutListTile(
+                  aboutBoxChildren: [
+                    DeveloperInfo(),
+                  ],
+                  applicationName: 'City University',
+                  icon: Icon(Icons.info),
+                  child: Text('About Developers'),
+                ),
+              ],
+            );
+          }),
+        ),
+        alignment: DrawerAlignment.start,
+        child: context.watch<AppData>().widget,
+      ),
+    );
+  }
+}
+
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.green.shade200,
-        actions: const [
-          IconButton(onPressed: null, icon: Icon(Icons.add_alert)),
+        backgroundColor: Colors.blue,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.add_alert),
+          ),
         ],
         title: Center(
           child: Image.asset(
@@ -23,7 +116,6 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      drawer: const drawer(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -105,7 +197,8 @@ class Home extends StatelessWidget {
                       height: 100,
                       color: Colors.white,
                       child: const Text(
-                          'Professor Dr. Md. Shah-E-Alam\nVice-Chancellor', ),
+                        'Professor Dr. Md. Shah-E-Alam\nVice-Chancellor',
+                      ),
                     ),
                   ),
                 ),
@@ -135,8 +228,10 @@ class Home extends StatelessWidget {
                     padding: EdgeInsets.all(8.0),
                     child: SizedBox(
                       height: 100,
-                      child: Text('Md Safaet Hossain\nHOD, Computer Science & Engineering', 
-                      style: TextStyle(fontSize: 15),),
+                      child: Text(
+                        'Md Safaet Hossain\nHOD, Computer Science & Engineering',
+                        style: TextStyle(fontSize: 15),
+                      ),
                     ),
                   ),
                 ),
@@ -145,73 +240,37 @@ class Home extends StatelessWidget {
             const SizedBox(
               height: 50,
             ),
-           Container(
-            color: Colors.pink.shade100,
-           child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Flexible(
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 100,
-                    child: Text(
-                        'City Campus\n13/A, Panthapath, Dhaka-1215\nCell: +8801819813111, +8801778149097\nTel: 44819070, 44819050\nadmin@cityuniversity.edu.bd'),
+            Container(
+              color: Colors.pink.shade100,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Flexible(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 100,
+                        child: Text(
+                            'City Campus\n13/A, Panthapath, Dhaka-1215\nCell: +8801819813111, +8801778149097\nTel: 44819070, 44819050\nadmin@cityuniversity.edu.bd'),
+                      ),
+                    ),
                   ),
-                ),
-              ),
-              Flexible(
-                child: Padding(
-                  padding: EdgeInsets.all(8.0),
-                  child: SizedBox(
-                    height: 100,
-                    child: Text(
-                        'Permanent Campus\nkhagan, Birulia, Savar, Dhaka-1216,Bangladesh\nCell: +880 1854-640476+880 1862-213214'),
+                  Flexible(
+                    child: Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: SizedBox(
+                        height: 100,
+                        child: Text(
+                            'Permanent Campus\nkhagan, Birulia, Savar, Dhaka-1216,Bangladesh\nCell: +880 1854-640476+880 1862-213214'),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
-            ],
-          ),
-        )
-        ],
-  
+            )
+          ],
+        ),
       ),
-          
-                ),
-                );
-  
-            
-            
+    );
   }
 }
-      // bottomNavigationBar: Column(
-      //   children: [
-      //     Row(
-      //       mainAxisAlignment: MainAxisAlignment.center,
-      //       children: <Widget>[
-      //         Flexible(
-      //           child: Padding(
-      //             padding: const EdgeInsets.all(8.0),
-      //             child: Container(
-      //               height: 100,
-      //               color: Colors.white,
-      //               child: const Text(
-      //                   'City Campus\n13/A, Panthapath, Dhaka-1215\nCell: +8801819813111, +8801778149097\nTel: 44819070, 44819050\nadmin@cityuniversity.edu.bd'),
-      //             ),
-      //           ),
-      //         ),
-      //         Flexible(
-      //           child: Padding(
-      //             padding: const EdgeInsets.all(8.0),
-      //             child: Container(
-      //               height: 100,
-      //               color: Colors.white,
-      //               child: const Text(
-      //                   'Permanent Campus\nkhagan, Birulia, Savar, Dhaka-1216,Bangladesh\nCell: +880 1854-640476+880 1862-213214'),
-      //             ),
-      //           ),
-      //         ),
-      //       ],
-      //     ),
-      //   ],
-      // ),
